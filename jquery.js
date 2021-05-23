@@ -32,6 +32,29 @@ window.jquery = function (selectorOrArray) {
         end(){
             // console.log(this.oldAPI)
             return this.oldAPI;
+        },
+        each(fn){
+            for(let i = 0; i < elements.length; i++){
+                fn.call(null, elements[i], i)
+            }
+            return this
+        },
+        parent(){
+            const array = [];
+            this.each((node) => {
+               array.includes(node.parentNode) ? '': array.push(node.parentNode);
+            });
+            return jquery(array)
+        },
+        children (){
+            const array = [];
+            this.each((node) => {
+               array.includes(node.children) ? '': array.push(...node.children);
+            });
+            return jquery(array)
+        },
+        print(){
+            console.log(elements)
         }
     }
 }
