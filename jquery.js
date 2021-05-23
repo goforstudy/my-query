@@ -58,3 +58,4 @@ window.jquery = function (selectorOrArray) {
         }
     }
 }
+window.$ = window.jquery;
