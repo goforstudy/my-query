@@ -1,6 +1,6 @@
 window.jquery = function (selector) {
     const elements = document.querySelectorAll(selector);
-    const api = {
+    return {
         addClass(className){
             for(let i = 0; i < elements.length; i++){
                 elements[i].classList.add(className)
@@ -9,5 +9,4 @@ window.jquery = function (selector) {
             return this;//实现链式操作
         }
     }
-    return api;
 }
